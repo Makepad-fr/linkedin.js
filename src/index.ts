@@ -113,8 +113,16 @@ export default class LinkedIn {
         // Go back to the current URL to avoid side efffects
         await this.#page.goto(currentUrl);
         return userLoggedIn;
+    }  
 
-    }   
+    /**
+     * Close page, browser context and the browser
+     */
+    async close() {
+        await this.#page.close();
+        await this.#context.close();
+        await this.#browser.close();
+    }
 
 }
 
