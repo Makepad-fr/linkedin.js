@@ -1,4 +1,4 @@
-# AliExpress.js
+# LinkedIn.hs
 
 ---
 **Important:** The repository is under active development. Use it in production at your own risk.
@@ -19,7 +19,7 @@ npm install @makepad/linkedinjs
 
 ## ⚡ Example
 
-Here's an example application to save the item details in to a JSON file:
+Please check the [example.ts](src/example.ts) file for a running example.
 
 
 ### 📅 Roadmap
@@ -36,16 +36,14 @@ All contributions are welcome. Please check [open issues] and [create a new issu
 Found something not working correctly ? Checkout [reported bugs] to see if this is something already known. \
 If not, please [report a bug] before starting to fixing it
 
-[Roadmap]: https://github.com/orgs/Makepad-fr/projects/5/
+[Roadmap]: https://github.com/orgs/Makepad-fr/projects/6/
 
-[open issues]: https://github.com/Makepad-fr/aliexpress.js/issues?q=is%3Aissue+is%3Aopen
+[open issues]: https://github.com/Makepad-fr/linkedin.js/issues?q=is%3Aissue+is%3Aopen
 
-[create new issue]: https://github.com/Makepad-fr/aliexpress.js/issues/new?assignees=&labels=feature%2C+request&template=feature_request.md&title=%5BFEATURE+REQUEST%5D
+[create new issue]: https://github.com/Makepad-fr/linkedin.js/issues/new?assignees=&labels=feature%2C+request&template=feature_request.md&title=%5BFEATURE+REQUEST%5D
 
-[report a bug]: https://github.com/Makepad-fr/aliexpress.js/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D
+[report a bug]: https://github.com/Makepad-fr/linkedin.js/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5BBUG%5D
 
-[reported bugs]: https://github.com/Makepad-fr/aliexpress.js/issues?q=is%3Aissue+is%3Aopen+label%3Abug
-
-[AliExpress]: https://aliexpress.com
+[reported bugs]: https://github.com/Makepad-fr/linkedin.js/issues?q=is%3Aissue+is%3Aopen+label%3Abug
 
 [contact us]: mailto:dev@makepad.fr
