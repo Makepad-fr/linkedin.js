@@ -1,0 +1,9 @@
+dist/example.js.map
+dist/example.js
+dist/example.d.ts.map
+dist/example.d.ts
+linkedin.json
+node_modules
+coverage
+src/
+.github/
