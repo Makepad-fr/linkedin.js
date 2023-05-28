@@ -17,6 +17,8 @@ async function main() {
     const profile = await linkedIn.profile(LINKEDIN_PROFILE_ID!);
     console.log('Full name');
     console.log(await profile.fullName);
+    console.log('Headline');
+    console.log(await profile.headline);
 }
 
 main().then();
