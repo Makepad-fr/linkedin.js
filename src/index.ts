@@ -67,13 +67,18 @@ export default class LinkedIn {
             await this.#page.fill(LOGIN_PASSWORD_INPUT_SELECTOR, password);
             await this.#page.click(LOGIN_SUBMIT_BUTTON_SELECTOR);
             console.info('Waiting to navigation to the feed page');
-            await this.#page.waitForURL(FEED_URL, {timeout: 600000});
-            console.info('Currently on the feed page');
-            if (this.#browserContextPath) {
-                console.info('Saving the browser context');
-                // Save the browser there's a given browser context path
-                await this.#context.storageState({ path: this.#browserContextPath })
-                console.info('Browser context saved');
+            try {
+                await this.#page.waitForURL(FEED_URL);
+                console.info('Currently on the feed page');
+                if (this.#browserContextPath) {
+                    console.info('Saving the browser context');
+                    // Save the browser there's a given browser context path
+                    await this.#context.storageState({ path: this.#browserContextPath })
+                    console.info('Browser context saved');
+                }
+            } catch (e) {
+                console.error(`Current page URL: ${this.#page.url()}`);
+                throw e;
             }
         }
         /* 
@@ -113,7 +118,7 @@ export default class LinkedIn {
         // Go back to the current URL to avoid side efffects
         await this.#page.goto(currentUrl);
         return userLoggedIn;
-    }  
+    }
 
     /**
      * Close page, browser context and the browser
