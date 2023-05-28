@@ -1,28 +1,29 @@
-name: Run Tests
+# FIXME: Disabled as the LinkedIn login requires a challange to verify browser on CI.
+# name: Run Tests
 
-on:
-  pull_request:
-    branches:
-      - master
+# on:
+#   pull_request:
+#     branches:
+#       - master
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '16'
 
-      - name: Install Dependencies
-        run: npm ci
+#       - name: Install Dependencies
+#         run: npm ci
 
-      - name: Run Tests
-        env:
-          LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
-          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
-        run: npm test
+#       - name: Run Tests
+#         env:
+#           LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
+#           LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+#         run: npm test
