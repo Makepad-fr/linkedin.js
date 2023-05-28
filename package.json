@@ -1,6 +1,6 @@
 {
   "name": "@makepad/linkedinjs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "LinkedIn web scraper written in TypeScript",
   "main": "out/index.js",
   "types": "out/index.d.ts",
