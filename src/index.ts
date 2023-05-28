@@ -2,10 +2,8 @@
 import { Browser, BrowserContext, Page, firefox } from 'playwright-core';
 import fs from 'fs'
 import { ACCEPT_COOKIES_BUTTON_SELECTOR, LOGIN_PASSWORD_INPUT_SELECTOR, LOGIN_SUBMIT_BUTTON_SELECTOR, LOGIN_USER_NAME_INPUT_SELECTOR } from './selectors';
+import { BASE_URL, FEED_URL, LOGIN_URL, PROFILE_BASE_URL } from './url-factory';
 
-const BASE_URL = 'https://www.linkedin.com/';
-const LOGIN_URL = `${BASE_URL}login/`
-const FEED_URL = `${BASE_URL}feed/`
 
 export default class LinkedIn {
 
