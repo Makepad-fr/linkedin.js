@@ -48,7 +48,7 @@ export default class LinkedIn {
      */
     async #acceptCookies() {
         try {
-            this.#page.click(ACCEPT_COOKIES_BUTTON_SELECTOR)
+            await this.#page.click(ACCEPT_COOKIES_BUTTON_SELECTOR)
         } catch {
             (() => 0)()
         }
