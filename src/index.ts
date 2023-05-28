@@ -92,7 +92,10 @@ export default class LinkedIn {
      */
     async #navigateToLoginPage() {
         await this.#page.goto(LOGIN_URL);
-        await this.#page.waitForLoadState('networkidle');
+        await Promise.race([
+            this.#page.waitForURL(LOGIN_URL),
+            this.#page.waitForURL(FEED_URL)
+        ]);
     }
 
     /**
