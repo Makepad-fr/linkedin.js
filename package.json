@@ -11,21 +11,41 @@
     "build": "npm run lint:fix && npm run compile",
     "postinstall": "npx playwright install"
   },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/kaanyagci/"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/Makepad-fr/"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/Makepad-fr/linkedin.js.git"
   },
   "keywords": [
+    "scraping",
+    "scraper",
+    "LinkedIn",
+    "automation",
+    "automate",
+    "data scraping",
+    "web scraping",
+    "social media",
+    "networking",
+    "professional",
+    "career",
+    "job search",
+    "business",
+    "digital marketing",
+    "personal branding",
+    "lead generation",
+    "growth hacking",
+    "developer tool",
     "TypeScript",
-    "web",
-    "scraping",
-    "scraping",
-    "linkedin",
-    "linkedin",
-    "web",
-    "scraping",
-    "linkedin",
-    "scraper"
+    "npm package"
   ],
   "author": "Makepad Developers <dev@makepad.fr>",
   "license": "LGPL-3.0",
