@@ -22,4 +22,7 @@ jobs:
         run: npm ci
 
       - name: Run Tests
+        env:
+          LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
+          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
         run: npm test
