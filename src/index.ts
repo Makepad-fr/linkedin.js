@@ -137,6 +137,7 @@ export default class LinkedIn {
     async profile(id: string) {
         // TODO: Check if the given id is not exist
         await this.#page.goto(`${PROFILE_BASE_URL}${id}`);
+        console.debug('Navigated to the profle page');
         return new UserProfile(id, this.#page);
     }   
 

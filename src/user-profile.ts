@@ -1,15 +1,31 @@
 import { Page } from "playwright-core";
 import { BASE_URL, PROFILE_BASE_URL } from "./url-factory";
+import { USER_PROFILE_FULL_NAME_SELECTOR } from "./selectors";
 
 export class UserProfile {
     readonly #id: string;
     readonly #page: Page;
     readonly #url: string;
+    #fullName: string | undefined;
 
     constructor(id: string, page: Page) {
         this.#id = id;
         this.#page = page;
         this.#url = `${PROFILE_BASE_URL}${id}`
+    }
+
+    /**
+     * Get the full name of the user
+     */
+    get fullName(): Promise<string | null> {
+        return this.#gotoProfilePage().then(async () => {
+            if (this.#fullName) {
+                return Promise.resolve(this.#fullName);
+            }
+            const fullName = await this.#page.textContent(USER_PROFILE_FULL_NAME_SELECTOR);
+            this.#fullName = fullName ?? undefined;
+            return fullName;
+        });
     }
 
     /**
