@@ -5,7 +5,7 @@
   "main": "out/index.js",
   "types": "out/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "node_modules/.bin/jest",
     "lint:fix": "./node_modules/.bin/eslint -c .eslintrc.json --fix ./src/*.ts",
     "compile": "./node_modules/.bin/tsc -p tsconfig.json",
     "build": "npm run lint:fix && npm run compile",
