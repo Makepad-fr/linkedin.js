@@ -3,7 +3,7 @@ import { Browser, BrowserContext, Page, firefox } from 'playwright-core';
 import fs from 'fs'
 import { ACCEPT_COOKIES_BUTTON_SELECTOR, LOGIN_PASSWORD_INPUT_SELECTOR, LOGIN_SUBMIT_BUTTON_SELECTOR, LOGIN_USER_NAME_INPUT_SELECTOR } from './selectors';
 import { BASE_URL, FEED_URL, LOGIN_URL, PROFILE_BASE_URL } from './url-factory';
-
+import { UserProfile } from './user-profile';
 
 export default class LinkedIn {
 
@@ -129,6 +129,16 @@ export default class LinkedIn {
         await this.#context.close();
         await this.#browser.close();
     }
+
+    /**
+     * Get the related profile information with the given user id
+     * @param id The user id of the profile
+     */
+    async profile(id: string) {
+        // TODO: Check if the given id is not exist
+        await this.#page.goto(`${PROFILE_BASE_URL}${id}`);
+        return new UserProfile(id, this.#page);
+    }   
 
 }
 
