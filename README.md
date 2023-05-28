@@ -1,4 +1,4 @@
-# LinkedIn.hs
+# LinkedIn.js
 
 ---
 **Important:** The repository is under active development. Use it in production at your own risk.
