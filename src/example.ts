@@ -14,7 +14,9 @@ async function main() {
     console.log('Is user logged in');
 
     console.log(await linkedIn.isUserLoggedIn());
-    await linkedIn.profile(LINKEDIN_PROFILE_ID!);
+    const profile = await linkedIn.profile(LINKEDIN_PROFILE_ID!);
+    console.log('Full name');
+    console.log(await profile.fullName);
 }
 
 main().then();
