@@ -3,3 +3,4 @@ dist/
 # Ignore saved browser context file
 linkedin.json
 node_modules
+coverage
