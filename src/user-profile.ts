@@ -18,7 +18,7 @@ export class UserProfile {
      * Get the full name of the user
      */
     get fullName(): Promise<string | null> {
-        return this.#gotoProfilePage().then(async () => {
+        return this.#execute(async () => {
             if (this.#fullName) {
                 return Promise.resolve(this.#fullName);
             }
@@ -27,6 +27,15 @@ export class UserProfile {
             return fullName;
         });
     }
+
+    /**
+     * Executes and returns value with the given function after navigating to the user profile page
+     * @param f The function to execute after navigating to the profile page
+     * @returns The returned value from the function
+     */
+    async #execute<T>(f: () => Promise<T>): Promise<T> {
+        return this.#gotoProfilePage().then(() => f());
+    } 
 
     /**
      * Navigates to the user profile page if necessary
