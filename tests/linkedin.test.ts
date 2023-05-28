@@ -48,6 +48,8 @@ describe('LinkedIn module', () => {
         if (fs.existsSync(contextFilePath)) {
             fs.rmSync(contextFilePath);
         }
-        await linkedIn.close();
+        if (linkedIn) {
+            await linkedIn.close();
+        }
     })
   });
