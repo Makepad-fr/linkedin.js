@@ -2,8 +2,8 @@
   "name": "@makepad/linkedinjs",
   "version": "0.0.1",
   "description": "LinkedIn web scraper written in TypeScript",
-  "main": "out/index.js",
-  "types": "out/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "node_modules/.bin/jest",
     "lint:fix": "./node_modules/.bin/eslint -c .eslintrc.json --fix ./src/*.ts",
