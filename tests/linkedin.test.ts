@@ -6,6 +6,7 @@
 */
 import LinkedIn from "../src";
 import fs from 'fs';
+import crypto from 'crypto';
    
 
 
