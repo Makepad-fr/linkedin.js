@@ -6,3 +6,4 @@ export const LOGIN_SUBMIT_BUTTON_SELECTOR = '//button[contains(@type,"submit")]'
 export const COOKIE_CONSTENT_BANNER_SELECTOR = '//div[contains(@type,"COOKIE_CONSENT")]'
 export const ACCEPT_COOKIES_BUTTON_SELECTOR = `${COOKIE_CONSTENT_BANNER_SELECTOR}//button[contains(@action-type, "ACCEPT")]`
 export const USER_PROFILE_FULL_NAME_SELECTOR = "//div[contains(@class,'pv-text-details__left-panel')][1]/div[1]/h1";
+export const USER_PROFILE_SHORT_DESCRIPTION = "//div[contains(@class,'pv-text-details__left-panel')][1]/div[2]";
