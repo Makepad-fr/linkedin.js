@@ -67,7 +67,7 @@ export default class LinkedIn {
             await this.#page.fill(LOGIN_PASSWORD_INPUT_SELECTOR, password);
             await this.#page.click(LOGIN_SUBMIT_BUTTON_SELECTOR);
             console.info('Waiting to navigation to the feed page');
-            await this.#page.waitForURL(FEED_URL, {timeout: 60000});
+            await this.#page.waitForURL(FEED_URL, {timeout: 600000});
             console.info('Currently on the feed page');
             if (this.#browserContextPath) {
                 console.info('Saving the browser context');
