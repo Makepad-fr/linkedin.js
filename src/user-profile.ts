@@ -1,6 +1,6 @@
 import { Page } from "playwright-core";
 import { BASE_URL, PROFILE_BASE_URL } from "./url-factory";
-import { USER_PROFILE_FULL_NAME_SELECTOR, USER_PROFILE_SHORT_DESCRIPTION } from "./selectors";
+import { USER_PROFILE_FULL_NAME_SELECTOR, USER_PROFILE_SHORT_DESCRIPTION_SELECTOR } from "./selectors";
 
 export class UserProfile {
     readonly #id: string;
@@ -33,7 +33,7 @@ export class UserProfile {
             if (this.#headline) {
                 return Promise.resolve(this.#headline);
             }
-            const headline = await this.#page.textContent(USER_PROFILE_SHORT_DESCRIPTION);
+            const headline = await this.#page.textContent(USER_PROFILE_SHORT_DESCRIPTION_SELECTOR);
             this.#headline = headline ?? undefined;
             return headline;
         });
