@@ -28,17 +28,17 @@ export class UserProfile {
         });
     }
 
-    get headline(): Promise<string|null> {
     /**
      * Get the the text under the user's full name
      */
+    get headline(): Promise<string|undefined> {
         return this.#execute(async () => {
             if (this.#headline) {
                 return Promise.resolve(this.#headline);
             }
             const headline = await this.#page.textContent(USER_PROFILE_SHORT_DESCRIPTION_SELECTOR);
             this.#headline = headline ?? undefined;
-            return headline;
+            return headline?.trim();
         });
     }
 
