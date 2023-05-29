@@ -29,6 +29,9 @@ export class UserProfile {
     }
 
     get headline(): Promise<string|null> {
+    /**
+     * Get the the text under the user's full name
+     */
         return this.#execute(async () => {
             if (this.#headline) {
                 return Promise.resolve(this.#headline);
