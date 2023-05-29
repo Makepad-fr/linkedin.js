@@ -19,6 +19,8 @@ async function main() {
     console.log(await profile.fullName);
     console.log('Headline');
     console.log(await profile.headline);
+    console.log('Location');
+    console.log(await profile.location);
 }
 
 main().then();
