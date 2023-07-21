@@ -58,7 +58,13 @@ export default class LinkedIn {
      * @param password The password used to log in
      */
     public async login(username: string, password: string) {
+        if (this.#isOnFeedPAge) {
+            console.debug('Already on the feed page no need to login');
+            return;
+        }
+        console.debug('Navigating to the login page');
         await this.#navigateToLoginPage();
+        // await this.#navigateToLoginPage();
         if (this.#isOnLoginPage) {
             await this.#acceptCookies();
             await this.#page.fill(LOGIN_USER_NAME_INPUT_SELECTOR, username);
@@ -89,6 +95,7 @@ export default class LinkedIn {
      * Navigates to the login page
      */
     async #navigateToLoginPage() {
+        console.debug('Navigating to the LOGIN URL');
         await this.#page.goto(LOGIN_URL);
         await Promise.race([
             this.#page.waitForURL(LOGIN_URL),
@@ -104,6 +111,13 @@ export default class LinkedIn {
     }
 
     /**
+     * Check if the current page's URL is the feed url
+     */
+    get #isOnFeedPAge(): boolean {
+        return this.#page.url().startsWith(FEED_URL);
+    }
+
+    /**
      * Returns true if the current user is logged in, false if not.
      * To check if the user is logged in, we'll go to the base url
      * and verify if the navigated url is the feed page or not.
@@ -111,12 +125,14 @@ export default class LinkedIn {
     async isUserLoggedIn(): Promise<boolean> {
         // Store the current URL to use after the execution
         const currentUrl = this.#page.url();
+        console.debug('Navigating to the BASE URL in isUserLoggedIn');
         await this.#page.goto(BASE_URL);
         let userLoggedIn = false;
         if (this.#page.url().startsWith(FEED_URL)) {
             userLoggedIn = true;
         }
         // Go back to the current URL to avoid side efffects
+        console.debug('Navigating to the curent URL');
         await this.#page.goto(currentUrl);
         return userLoggedIn;
     }
@@ -136,6 +152,7 @@ export default class LinkedIn {
      */
     async profile(id: string) {
         // TODO: Check if the given id is not exist
+        console.debug('Navigating to the profile URL');
         await this.#page.goto(`${PROFILE_BASE_URL}${id}`);
         console.debug('Navigated to the profle page');
         return new UserProfile(id, this.#page);
